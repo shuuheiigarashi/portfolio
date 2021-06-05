@@ -29,7 +29,7 @@ export const UserCard: VFC = memo(() => {
                             src="https://source.unsplash.com/random" 
                             />
                         <Text fontSize="lg" fontWeight="bold">work</Text>
-                        <Text fontSize="sm" color="gray">teextetxtetxtetxtext</Text>
+                        <Text fontSize="sm" color="gray">Coming soon...</Text>
                     </Stack>
                 </Box>              
 
