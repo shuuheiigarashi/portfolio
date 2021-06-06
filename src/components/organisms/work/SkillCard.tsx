@@ -1,16 +1,14 @@
 import { memo, VFC } from "react";
-import { Box, Image, Stack, Text} from "@chakra-ui/react";
+import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 
-// type Props = {
-//     id: number;
-//     imageUrl: string;
-//     userName: string;
-//     fullName: string;
-//     onClick: (id: number) => void;
-// }
+type Props = {
+    title: string;
+    contents: string;
+}
 
-export const WorkCard: VFC = memo(() => {
+export const SkillCard: VFC<Props> = memo((props) => {
+        const { title, contents } = props;
     return (
                 <Box
                     w="200px"
@@ -27,10 +25,9 @@ export const WorkCard: VFC = memo(() => {
                             m="auto"
                             src="https://source.unsplash.com/random" 
                             />
-                        <Text fontSize="lg" fontWeight="bold">work</Text>
-                        <Text fontSize="sm" color="gray">Coming soon...</Text>
+                <Text fontSize="lg" fontWeight="bold">{title}</Text>
+                <Text fontSize="sm" color="gray">{contents}</Text>
                     </Stack>
-                </Box>              
-
+                </Box>
     )
 })

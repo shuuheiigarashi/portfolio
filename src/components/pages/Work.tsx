@@ -1,6 +1,6 @@
 import { Box , Container, Flex, Wrap } from "@chakra-ui/react";
 import { memo, VFC } from "react";
-import { UserCard } from "../organisms/work/WorkCard";
+import { WorkCard } from "../organisms/work/WorkCard";
 
 export const Work: VFC = memo(() => {
     return (
@@ -15,7 +15,7 @@ export const Work: VFC = memo(() => {
             {/* <Box >Coming soon...</Box> */}
             <Flex flexWrap="wrap" justifyContent="center">
                             <Wrap p={{ base: 4, md: 10 }}>
-            <UserCard />
+            <WorkCard />
                     </Wrap>
             </Flex>
 
