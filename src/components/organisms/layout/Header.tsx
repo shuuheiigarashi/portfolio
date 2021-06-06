@@ -21,14 +21,14 @@ export const Header: VFC = memo(() => {
                 padding={{ base: 3, md: 5 }}
                 maxWidth="100%"
         >
-                <Flex justify="center" flexGrow={2} size="md" fontSize="30px">
-                <Box pr={8}>
+                <Flex justify="center" flexGrow={2} size="md" fontSize="30px" maxWidth="100%">
+                <Box pr={{ base: 4, md: 8 }}>
                 <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={ onClickHome } > Home</MotionBox>
                 </Box>
-                <Box pr={8}>
+                <Box pr={{ base: 4, md: 8 }}>
                 <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={onClickAbout}>About</MotionBox>
                 </Box>
-                <Box pr={8}>
+                <Box pr={{ base: 4, md: 8 }}>
                 <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={onClickWork}>Work</MotionBox>
                 </Box>
                 <Box>
