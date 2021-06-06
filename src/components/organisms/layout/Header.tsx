@@ -13,25 +13,26 @@ export const Header: VFC = memo(() => {
     const onClickContact = useCallback(() => history.push("/contact"), [history]);
     return (
         <>
-        <Flex
-            as="nav"
-            color="teal.300"
-            align="center"
-            justify="space-between"
-            padding={{ base: 3, md: 5 }}
+            <Flex
+                as="nav"
+                color="teal.300"
+                align="center"
+                justify="space-between"
+                padding={{ base: 3, md: 5 }}
+                maxWidth="100%"
         >
                 <Flex justify="center" flexGrow={2} size="md" fontSize="30px">
                 <Box pr={8}>
-                <MotionBox cursor="pointer" onClick={onClickHome}>Home</MotionBox>
+                <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={ onClickHome } > Home</MotionBox>
                 </Box>
                 <Box pr={8}>
-                <MotionBox cursor="pointer" onClick={onClickAbout}>About</MotionBox>
+                <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={onClickAbout}>About</MotionBox>
                 </Box>
                 <Box pr={8}>
-                <MotionBox cursor="pointer" onClick={onClickWork}>Work</MotionBox>
+                <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={onClickWork}>Work</MotionBox>
                 </Box>
                 <Box>
-                <MotionBox cursor="pointer" onClick={onClickContact}>Contact</MotionBox>
+                <MotionBox whileHover={{scale: 1.2 }} cursor="pointer" onClick={onClickContact}>Contact</MotionBox>
                 </Box>
                 </Flex>
             </Flex>
