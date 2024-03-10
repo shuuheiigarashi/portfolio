@@ -3,13 +3,9 @@
 私のスキルやポートフォリオを掲載しております
 (ポートフォリオは順次掲載)
 
-
-
 ## URL
 
-https://shuuhei.ml
-
-
+https://portfolio-one-rose-82.vercel.app/
 
 ## 作成した目的　
 
@@ -24,7 +20,7 @@ React でのページ実装を行う経験及び
 ・Framer-motion
 ・react hook form
 ・AWS  
- ・Route53  
- ・Amplify
+・Route53  
+・Amplify
 
 ## 機能一覧
