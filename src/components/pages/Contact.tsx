@@ -16,10 +16,13 @@ export const Contact: VFC = memo(() => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  //   const onSubmit = data: string => console.log(data);
+
+  const onSubmit = (data: any) => {
+    console.log(data); // フォームデータをログに出力（後で適切な処理に置き換える）
+  };
+
   return (
     <Container>
       <Box as="h1" textAlign="center" color="teal.300" fontSize="50px">
@@ -27,20 +30,35 @@ export const Contact: VFC = memo(() => {
       </Box>
       <Box textAlign="center">お問い合わせはこちらから</Box>
       <Box>
-        <Stack spacing={4}>
-          <FormControl id="email">
+        <Stack spacing={4} as="form" onSubmit={handleSubmit(onSubmit)}>
+          <FormControl id="name">
             <FormLabel>Name</FormLabel>
-            <Input type="email" bg="white" alignItems="center" />
+            <Input
+              bg="white"
+              type="text"
+              {...register("name", { required: true })}
+            />
+            {errors.name && <span>必須項目です</span>}
           </FormControl>
           <FormControl id="email">
             <FormLabel>Email</FormLabel>
-            <Input type="email" bg="white" alignItems="center" />
+            <Input
+              bg="white"
+              type="email"
+              {...register("email", { required: true })}
+            />
+            {errors.email && <span>必須項目です</span>}
           </FormControl>
-          <FormControl id="email">
+          <FormControl id="content">
             <FormLabel>問い合わせ内容</FormLabel>
-            <Textarea type="text" bg="white" alignItems="center" />
+            <Textarea
+              bg="white"
+              type="text"
+              {...register("content", { required: true })}
+            />
+            {errors.content && <span>必須項目です</span>}
           </FormControl>
-          <Input type="submit" />
+          <Input type="submit" value="送信" onClick={onSubmit} />
         </Stack>
       </Box>
       <Box textAlign="center" paddingTop={8} fontSize={24}>
