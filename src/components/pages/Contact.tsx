@@ -11,6 +11,7 @@ import {
 import { memo, VFC } from "react";
 import { useForm } from "react-hook-form";
 import { FaTwitterSquare, FaGithubSquare } from "react-icons/fa";
+import { SiQiita } from "react-icons/si";
 
 export const Contact: VFC = memo(() => {
   const {
@@ -64,12 +65,24 @@ export const Contact: VFC = memo(() => {
       <Box textAlign="center" paddingTop={8} fontSize={24}>
         SNS
       </Box>
-      <Flex justifyContent="center" padding={4} color="teal.300">
+      <Flex justifyContent="center" padding={2} color="teal.300">
         <Box as="a" href="https://twitter.com/shuuheifront" target="_blank">
           <FaTwitterSquare size={50} />
         </Box>
         <Box as="a" href="https://github.com/shuuheiigarashi" target="_blank">
           <FaGithubSquare size={50} />
+        </Box>
+      </Flex>
+      <Flex
+        justifyContent="center"
+        bg="teal.300"
+        color="#D3D3D3"
+        w="100px"
+        margin="0 auto"
+        borderRadius={8}
+      >
+        <Box as="a" href="https://qiita.com/IgarashiShuuhei" target="_blank">
+          <SiQiita size={50} />
         </Box>
       </Flex>
     </Container>
