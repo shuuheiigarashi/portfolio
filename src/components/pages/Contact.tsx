@@ -23,29 +23,17 @@ export const Contact: VFC = memo(() => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data: any) => {
-    const webhookUrl = process.env.REACT_APP_SLACK_WEBHOOK_URL; 
-    const payload = {
-      text: `新しい問い合わせがありました:\n名前: ${data.name}\nメール: ${data.email}\n内容: ${data.content}`
-    };
-
-    if (!webhookUrl) {
-      console.error("Webhook URL is not defined");
-      return;
-    }
-
     try {
-      const response = await fetch(webhookUrl, {
+      const response = await fetch('/api/send-to-slack', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
-
+  
       if (!response.ok) {
         throw new Error('Slackへの送信に失敗しました。');
       }
-
+  
       console.log('送信成功:', data);
     } catch (error) {
       console.error('エラー:', error);
