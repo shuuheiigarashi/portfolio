@@ -23,7 +23,7 @@ export const Contact: VFC = memo(() => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data: any) => {
-    const webhookUrl = process.env.SLACK_WEBHOOK_URL; 
+    const webhookUrl = process.env.REACT_APP_SLACK_WEBHOOK_URL; 
     const payload = {
       text: `新しい問い合わせがありました:\n名前: ${data.name}\nメール: ${data.email}\n内容: ${data.content}`
     };
