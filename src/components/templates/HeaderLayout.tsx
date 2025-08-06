@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
 import { memo, VFC } from "react";
 import { Header } from "../organisms/layout/Header";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Box } from "@chakra-ui/react";
+
 type Props = {
   children: ReactNode;
 };
@@ -14,25 +15,20 @@ export const HeaderLayout: VFC<Props> = memo((props) => {
   return (
     <>
       <Header />
-      <MotionBox
-        animate={{
-          x: 0,
-          opacity: 1,
-        }}
-        initial={{
-          x: 100,
-          opacity: 0,
-        }}
-        exit={{
-          x: -100,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-      >
-        {children}
-      </MotionBox>
+      <AnimatePresence mode="wait">
+        <MotionBox
+          key={window.location.pathname}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut"
+          }}
+        >
+          {children}
+        </MotionBox>
+      </AnimatePresence>
     </>
   );
 });
